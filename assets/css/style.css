@@ -1,6 +1,7 @@
 body {
   height: 100vh;
   background-image: url('../img/background.jpg');
+  background-size: cover;
 }
 
 .as_txt_shadow-dark {

@@ -45,8 +45,6 @@ btnPlay.addEventListener('click', function(){
   const result = oddOrEven(sum)
   let messageColor;
 
-  console.log(userChoice);
-
   if ((userChoice.toLowerCase() !== 'pari') && (userChoice.toLowerCase() !== 'dispari')) {
 
     messageColor = 'text-warning';

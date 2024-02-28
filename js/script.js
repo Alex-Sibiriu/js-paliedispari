@@ -26,7 +26,6 @@ function isPalindromeWord(word, elHTML) {
   }}
 
   elHTML.innerHTML = 'È palindroma'
-  elHTML.classList.remove('d-none')
 }
 
 /***********************
@@ -50,7 +49,7 @@ btnPlay.addEventListener('click', function(){
     messageColor = 'text-warning';
     gameMessage.innerHTML = 'ATTENZIONE! Inserisci "pari" o "dispari"'
 
-  } else if ((userNumber < 1) || (userNumber > 5)) {
+  } else if ((userNumber < 1) || (userNumber > 5) || (isNaN(userNumber))) {
 
     messageColor = 'text-warning';
     gameMessage.innerHTML = 'ATTENZIONE! Il numero che hai inserito non è valido, inserisci un numero da 1 a 5'

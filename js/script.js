@@ -12,14 +12,21 @@ btnPalindrome.addEventListener('click', function() {
 })
 
 function isPalindromeWord(word, elHTML) {
-  
-  if (word.length < 3) {
+
+  let wordL = word.toLowerCase();
+
+  elHTML.classList.remove('d-none')
+  if (wordL.length < 3) {
     return elHTML.innerHTML = 'ATTENZIONE! Inserisci una parola di almeno tre lettere';
   }
-  
-  const reverseWord =  word.split('').reverse().join('');
 
-  return elHTML.innerHTML = word === reverseWord ? 'Palindromo' : 'Non è palindromo';
+  for (let i = 0; i < wordL.length/2 ; i++) {
+  if (wordL[i] !== wordL[word.length - 1 - i]) {
+    return elHTML.innerHTML = 'Non è palindroma';
+  }}
+
+  elHTML.innerHTML = 'È palindroma'
+  elHTML.classList.remove('d-none')
 }
 
 /***********************
@@ -36,35 +43,43 @@ btnPlay.addEventListener('click', function(){
   const pcNumber = randomNumber(1, 5);
   const sum = userNumber + pcNumber;
   const result = oddOrEven(sum)
+  let messageColor;
 
   console.log(userChoice);
 
   if ((userChoice.toLowerCase() !== 'pari') && (userChoice.toLowerCase() !== 'dispari')) {
 
+    messageColor = 'text-warning';
     gameMessage.innerHTML = 'ATTENZIONE! Inserisci "pari" o "dispari"'
 
-  } else if ((userNumber <= 0) || (userNumber > 5)) {
+  } else if ((userNumber < 1) || (userNumber > 5)) {
 
+    messageColor = 'text-warning';
     gameMessage.innerHTML = 'ATTENZIONE! Il numero che hai inserito non è valido, inserisci un numero da 1 a 5'
 
-  } else if (result === userChoice) {
+  } else if (result === userChoice.toLowerCase()) {
 
+    messageColor = 'text-success';
     gameMessage.innerHTML = 
     `
     Tu hai scelto ${userNumber} mentre il PC ha scelto ${pcNumber} <br>
-    il risultato è ${result} <br>
+    il risultato è ${sum}, ${result}.<br>
     HAI VINTO!
     `
   } else {
 
+    messageColor = 'text-danger';
     gameMessage.innerHTML = 
     `
     Tu hai scelto ${userNumber} mentre il PC ha scelto ${pcNumber} <br>
-    il risultato è ${result} <br>
+    il risultato è ${sum}, ${result}.<br>
     HAI PERSO!
     `
   }
   
+  gameMessage.classList.remove('text-success', 'text-danger', 'text-warning');
+  gameMessage.classList.add(messageColor);
+  gameMessage.classList.remove('d-none')
 })
 
 function randomNumber(min, max) {

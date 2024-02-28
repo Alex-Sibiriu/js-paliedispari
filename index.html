@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Paliedispari</title>
 
   <!-- LINK BOOTSTRAP -->
@@ -10,23 +11,39 @@
 
   <!-- LINK CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
-<body class="bg-secondary">
+
+<body>
 
   <!-- PALINDROME -->
-  <div class="container my-5">
-    <input id="user-word" type="text">
-    <button id="btn-palindrome">Verifica</button>
-    <h2 id="palindrome-result"></h2>
+  <div class="container my-5 text-center">
+    <h2 class="fw-bold py-5 text-white">Inserisci una parola e scopri se è palindroma!</h2>
+    <div>
+      <input id="user-word" class="w-50 p-3 rounded-3 mb-4 bg-secondary fw-bold text-white" type="text" placeholder="Inserisci una parola con più di due lettere">
+    </div>
+    <button id="btn-palindrome" class="btn btn-light fs-3 fw-bold">Verifica</button>
+    <h3 id="palindrome-result" class="as_background_light mt-3 py-4 text-uppercase fw-bold d-none"></h3>
   </div>
+  <!-- /PALINDROME -->
 
-  <div class="container py-5">
-    <input id="user-choice" type="text">
-    <input id="user-number" type="number">
-    <button id="play">Gioca</button>
-    <h2 id="winner"></h2>
+  <!-- ODD OR EVEN -->
+  <div class="container py-5 text-center border-top border-primary text-white">
+    <h2 class="fw-bold py-5">Gioca a Pari o Dispari!</h2>
+    <div class="d-flex justify-content-around">
+      <div>
+        <h3>Scegli "pari" o "dispari"</h3>
+        <input id="user-choice" class="mt-2 p-3 rounded-3 bg-secondary fw-bold text-white" type="text" placeholder="Scrivi 'pari' o 'dispari'">
+      </div>
+      <div>
+        <h3>Scegli un numero da 1 a 5</h3>
+        <input id="user-number" class="mt-2 p-3 rounded-3 bg-secondary fw-bold text-white" type="number" placeholder="da 1 a 5">
+      </div>
+    </div>
+    <button id="play" class="btn btn-light fs-3 my-5 fw-bold">Gioca</button>
+    <h3 id="winner" class="as_background_light py-3 fw-bold d-none"></h3>
   </div>
-
+  <!-- /ODD OR EVEN -->
   
   <script src="js/script.js"></script>
 </body>

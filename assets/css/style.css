@@ -1,0 +1,13 @@
+body {
+  height: 100vh;
+  background-image: url('../img/background.jpg');
+}
+
+.as_txt_shadow-dark {
+  text-shadow: 0 0 20px black;
+}
+
+.as_background_light {
+  background: radial-gradient(circle, white, transparent);
+  text-shadow: 0 0 2px black;
+}
